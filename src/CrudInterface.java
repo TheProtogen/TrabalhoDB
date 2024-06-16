@@ -1,4 +1,4 @@
-public interface AppDAO {
+public interface CrudInterface {
     public void pesquisar();
     public void criar();
     public void atualizar();

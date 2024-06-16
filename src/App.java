@@ -1,3 +1,5 @@
+import java.sql.Connection;
+
 import javax.tools.Tool;
 
 import javafx.application.Application;
@@ -12,61 +14,48 @@ import javafx.scene.layout.Background;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.FlowPane;
 import javafx.scene.layout.GridPane;
+import javafx.scene.layout.Pane;
 import javafx.scene.paint.Color;
 import javafx.scene.transform.Scale;
 import javafx.stage.Stage;
+import view.LoginConstrutor;
 
 public class App extends Application {
 
+    private Stage stage;
+    private Scene scene;
+    private static Pane pane;
+
+    private static LoginConstrutor login = new LoginConstrutor();
+
+    @Override
+    public void start(Stage primaryStage) {
+		stage = primaryStage;
+
+
+		pane = new Pane();
+		pane.setPrefWidth(640);
+		pane.setPrefHeight(400);
+		
+		login.montarTela(pane);
+		
+		scene = new Scene(pane);
+		
+		stage.setScene(scene);
+		stage.setResizable(false);
+		stage.setTitle("Teste");
+		stage.show();
+    }
 
     public static void main(String[] args) throws Exception {
         App.launch(args);
     }
-
-    
-
-    public void start(Stage stage) {
-        GridPane panePrincipal = new GridPane();
-        panePrincipal.setStyle("-fx-background-color: #2F3C7E");
-        panePrincipal.setPadding(new Insets(10, 10, 10, 10));
-
-        panePrincipal.setVgap(5); 
-        panePrincipal.setHgap(5);
-
-        panePrincipal.setAlignment(Pos.CENTER);
-
-        
-        Scene scn = new Scene( panePrincipal, 800, 600);
-
-        Button btnGravar = new Button("Gravar");
-        Button btnPesquisar = new Button("Pesquisar");
-        Button btnAtualizar = new Button("Atualizar");
-        Button btnDeletar = new Button("Deletar");
-
-        btnGravar.setPrefWidth(150);
-        btnPesquisar.setPrefWidth(150);
-        btnAtualizar.setPrefWidth(150);
-        btnDeletar.setPrefWidth(150);
-    
-        btnGravar.setStyle("-fx-font-size: 20pt;");
-        btnPesquisar.setStyle("-fx-font-size: 20pt;");
-        btnAtualizar.setStyle("-fx-font-size: 20pt;");
-        btnDeletar.setStyle("-fx-font-size: 20pt;");
-
-
-        //panePrincipal.add(new FlowPane(btnGravar, btnPesquisar,btnAtualizar,btnDelete), 0,0);
-
-        
-        panePrincipal.add(btnPesquisar, 1, 1);
-        panePrincipal.add(btnGravar, 2, 1);
-        panePrincipal.add(btnAtualizar, 3, 1);
-        panePrincipal.add(btnDeletar, 4, 1);
-        
-
-        stage.setScene(scn);
-        stage.setTitle("Controle de aluguel");
-        //stage.setResizable(false);
-        stage.show();
-    }
-
 }
+
+
+
+/* ================================ A FAZER ================================
+Fazer bind
+Fazer tela : Gravar | Pesquisar | Atualizar | Deletar
+Fazer os MVC
+*/
