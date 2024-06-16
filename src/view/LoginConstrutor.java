@@ -2,6 +2,8 @@ package view;
 
 import javafx.geometry.Insets;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
+import javafx.scene.control.TextField;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.Pane;
 
@@ -11,27 +13,28 @@ public class LoginConstrutor implements TelaInterface {
 
     @Override
     public void montarTela(Pane pane) {
-        pane = new GridPane();
-        pane.setStyle("-fx-background-color: #2F3C7E");
-        pane.setPadding(new Insets(10, 10, 10, 10));
+        Label userLabel = new Label("Usuário:");
+        userLabel.setLayoutX(50);
+        userLabel.setLayoutY(50);
 
-        Button btnGravar = new Button("Gravar");
-        Button btnPesquisar = new Button("Pesquisar");
-        Button btnAtualizar = new Button("Atualizar");
-        Button btnDeletar = new Button("Deletar");
+        TextField userField = new TextField();
+        userField.setLayoutX(150);
+        userField.setLayoutY(50);
 
-        btnGravar.setPrefWidth(150);
-        btnPesquisar.setPrefWidth(150);
-        btnAtualizar.setPrefWidth(150);
-        btnDeletar.setPrefWidth(150);
-    
-        btnGravar.setStyle("-fx-font-size: 20pt;");
-        btnPesquisar.setStyle("-fx-font-size: 20pt;");
-        btnAtualizar.setStyle("-fx-font-size: 20pt;");
-        btnDeletar.setStyle("-fx-font-size: 20pt;");
+        Label passwordLabel = new Label("Senha:");
+        passwordLabel.setLayoutX(50);
+        passwordLabel.setLayoutY(100);
 
-        //pane.add(new FlowPane(btnGravar, btnPesquisar,btnAtualizar,btnDelete), 0,0);
-        pane.getChildren().addAll(btnAtualizar);
+        TextField passwordField = new TextField();
+        passwordField.setLayoutX(150);
+        passwordField.setLayoutY(100);
+
+        Button loginButton = new Button("Login");
+        loginButton.setLayoutX(150);
+        loginButton.setLayoutY(150);
+        
+        // Adicione todos os componentes ao pane
+        pane.getChildren().addAll(userLabel, userField, passwordLabel, passwordField, loginButton);
         
     }
     

@@ -22,29 +22,27 @@ import view.LoginConstrutor;
 
 public class App extends Application {
 
-    private Stage stage;
-    private Scene scene;
-    private static Pane pane;
-
-    private static LoginConstrutor login = new LoginConstrutor();
+  private Pane pane;
+  private Scene scene;
+  private Stage stage;
+  private LoginConstrutor login = new LoginConstrutor();
 
     @Override
     public void start(Stage primaryStage) {
-		stage = primaryStage;
+		  stage = primaryStage;
 
+        pane = new Pane();
+        pane.setPrefWidth(640);
+        pane.setPrefHeight(400);
 
-		pane = new Pane();
-		pane.setPrefWidth(640);
-		pane.setPrefHeight(400);
-		
-		login.montarTela(pane);
-		
-		scene = new Scene(pane);
-		
-		stage.setScene(scene);
-		stage.setResizable(false);
-		stage.setTitle("Teste");
-		stage.show();
+        login.montarTela(pane); // Chama o método para montar a tela
+
+        scene = new Scene(pane);
+
+        stage.setScene(scene);
+        stage.setResizable(false);
+        stage.setTitle("Teste");
+        stage.show();
     }
 
     public static void main(String[] args) throws Exception {
