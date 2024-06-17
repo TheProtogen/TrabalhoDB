@@ -4,8 +4,11 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.List;
 
+import modelo.Funcionario;
 import persistencia.FuncionarioDao;
+import persistencia.FuncionarioException;
 import persistencia.DBconnectionTest;
 
 //Criar construtor que vai receber os dados do TextField pelo LoginBoundary
@@ -17,7 +20,7 @@ public class LoginControle implements FuncionarioDao {
 
     public boolean login (String cpf, String senha) {
         Connection c = con.getConnection();
-		String sql = "SELECT * FROM pessoa "+
+		String sql = "SELECT nome FROM pessoa "+
         "WHERE cpf = ? AND senha = ?"; //criar select aqui
 		
 		
@@ -41,27 +44,33 @@ public class LoginControle implements FuncionarioDao {
     }
 
     @Override
-    public void pesquisar(Object o) {
+    public void insert(Funcionario f) throws FuncionarioException {
         // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'pesquisar'");
+        throw new UnsupportedOperationException("Unimplemented method 'insert'");
     }
 
     @Override
-    public void criar(Object o) {
+    public int update(Funcionario f) throws FuncionarioException {
         // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'criar'");
+        throw new UnsupportedOperationException("Unimplemented method 'update'");
     }
 
     @Override
-    public void atualizar(Object o) {
+    public void delete(long id) throws FuncionarioException {
         // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'atualizar'");
+        throw new UnsupportedOperationException("Unimplemented method 'delete'");
     }
 
     @Override
-    public void deletar(Object o) {
+    public List<Funcionario> pesquisarTodos(Funcionario f) throws FuncionarioException {
         // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'deletar'");
+        throw new UnsupportedOperationException("Unimplemented method 'pesquisarTodos'");
+    }
+
+    @Override
+    public List<Funcionario> findAll(Funcionario f) throws FuncionarioException {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'findAll'");
     }
 
 }

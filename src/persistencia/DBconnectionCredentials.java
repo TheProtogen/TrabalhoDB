@@ -2,7 +2,7 @@ package persistencia;
 
 public class DBconnectionCredentials {
     
-    public String url = "jdbc:sqlserver://localhost:1433;databaseName=testeDB;trustServerCertificate=true";
+    public String url = "jdbc:sqlserver://localhost:1433;databaseName=Aluguel_Vestido;trustServerCertificate=true";
     public String user = "Vivi";
     public String pass = "root789ROOT";
     

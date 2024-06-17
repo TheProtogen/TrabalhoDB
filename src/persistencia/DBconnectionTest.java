@@ -14,7 +14,7 @@ public class DBconnectionTest {
             Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
             con = DriverManager.getConnection(db.getUrl(), db.getUser(), db.getPass());
 
-            System.out.println("DB conectado");
+            System.out.println("Conexão detectada com o DB");
 
             return con;
         } catch (Exception e) {

@@ -30,7 +30,7 @@ public class FuncionarioDAOImp implements FuncionarioDao {
             pstm.setInt(1, f.getCpf());
             pstm.setString(2, f.getSenha());
             pstm.setString(3, f.getNome());
-            pstm.setString(4, f.getSobrenome();
+            pstm.setString(4, f.getSobrenome());
             pstm.setString(5, f.getEndCep());
             pstm.setString(6,f.getEndLog());
             pstm.setString(7,f.getEndNum());
@@ -60,23 +60,6 @@ public class FuncionarioDAOImp implements FuncionarioDao {
     }
 
     @Override
-    public void delete(int id) throws FuncionarioException {
-        try {
-            Connection con = dbConn.getConnection();
-            String sql = """
-                DELETE FROM alunos WHERE id = ?)
-            """;
-            PreparedStatement pstm = con.prepareStatement(sql);
-            pstm.setInt(1, id);
-            pstm.executeUpdate();
-            con.close();
-        } catch (Exception e) {
-            throw new FuncionarioException( e );
-        }
-    }
-    }
-
-    @Override
     public List<Funcionario> pesquisarTodos(Funcionario f) throws FuncionarioException {
 
         return null;
@@ -85,5 +68,22 @@ public class FuncionarioDAOImp implements FuncionarioDao {
     @Override
     public List<Funcionario> findAll(Funcionario f) throws FuncionarioException {
         return null;
+    }
+
+
+    @Override
+    public void delete(long id) throws FuncionarioException {
+        try {
+            Connection con = dbConn.getConnection();
+            String sql = """
+                DELETE FROM alunos WHERE id = ?)
+            """;
+            PreparedStatement pstm = con.prepareStatement(sql);
+            pstm.setLong(1, id);
+            pstm.executeUpdate();
+            con.close();
+        } catch (Exception e) {
+            throw new FuncionarioException( e );
+        }
     }
 }

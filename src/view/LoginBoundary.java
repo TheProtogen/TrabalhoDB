@@ -63,6 +63,7 @@ public class LoginBoundary implements TelaInterface {
              * ir pra pagina principal caso isso funciona [ ], se não, mandar mensagem de erro [X]
              * verificar se é funcionario e mandar pra outra pagina []
              */
+            System.out.println("Usuário existe, mudando para home page");
         } else {
             avisoLabel.setText("Usuário não encontrado!");
             avisoLabel.setVisible(true);
