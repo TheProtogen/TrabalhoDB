@@ -1,9 +1,64 @@
 package control;
 
-public class LoginControle {
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+
+import persistencia.CrudDAO;
+import persistencia.DBconnectionTest;
+
+public class LoginControle implements CrudDAO {
     
-    public void login (String cpf, String senha) {
-        
+    DBconnectionTest con = new DBconnectionTest();
+
+    public boolean login (String cpf, String senha) {
+        Connection c = con.getConnection();
+		String sql = "SELECT * FROM pessoa "+
+        "WHERE cpf = ? AND senha = ?"; //criar select aqui
+		
+		
+		try {
+            PreparedStatement ps = c.prepareStatement(sql);
+            ps.setString(1, cpf);
+            ps.setString(2, senha);
+
+            ResultSet rs = ps.executeQuery();
+		    boolean result = rs.next();
+
+            rs.close();
+		    ps.close();
+		    c.close();
+		    return result;
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return false;
+        }	
+    }
+
+    @Override
+    public void pesquisar(Object o) {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'pesquisar'");
+    }
+
+    @Override
+    public void criar(Object o) {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'criar'");
+    }
+
+    @Override
+    public void atualizar(Object o) {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'atualizar'");
+    }
+
+    @Override
+    public void deletar(Object o) {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'deletar'");
     }
 
 }
