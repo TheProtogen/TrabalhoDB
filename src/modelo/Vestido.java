@@ -7,15 +7,16 @@ public class Vestido {
     public String marca;
     public String finalidade;
     public double valor;
+    public boolean disponivel;
 
-    public Vestido(int id, int tamanho, String cor, String marca, String finalidade, double valor) {
-        this.id = id;
-        this.tamanho = tamanho;
-        this.cor = cor;
-        this.marca = marca;
-        this.finalidade = finalidade;
-        this.valor = valor;
-    }
+//    public Vestido(int id, int tamanho, String cor, String marca, String finalidade, double valor) {
+//        this.id = id;
+//        this.tamanho = tamanho;
+//        this.cor = cor;
+//        this.marca = marca;
+//        this.finalidade = finalidade;
+//        this.valor = valor;
+//    }
     
     public int getId() {
         return id;
@@ -65,6 +66,11 @@ public class Vestido {
         this.valor = valor;
     }
 
-    
+    public boolean isDisponivel() {
+        return disponivel;
+    }
 
+    public void setDisponivel(boolean disponivel) {
+        this.disponivel = disponivel;
+    }
 }
