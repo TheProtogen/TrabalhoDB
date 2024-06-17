@@ -1,41 +1,27 @@
-import java.sql.Connection;
 
-import javax.tools.Tool;
 
 import javafx.application.Application;
-import javafx.geometry.Dimension2D;
-import javafx.geometry.Insets;
-import javafx.geometry.Pos;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.control.TableView;
-import javafx.scene.layout.Background;
-import javafx.scene.layout.BorderPane;
-import javafx.scene.layout.FlowPane;
-import javafx.scene.layout.GridPane;
 import javafx.scene.layout.Pane;
-import javafx.scene.paint.Color;
-import javafx.scene.transform.Scale;
 import javafx.stage.Stage;
-import view.LoginConstrutor;
+import view.LoginBoundary;
 
 public class App extends Application {
 
   private Pane pane;
   private Scene scene;
   private Stage stage;
-  private LoginConstrutor login = new LoginConstrutor();
+  private LoginBoundary login = new LoginBoundary();
 
     @Override
     public void start(Stage primaryStage) {
 		  stage = primaryStage;
 
         pane = new Pane();
-        pane.setPrefWidth(640);
-        pane.setPrefHeight(400);
+        pane.setPrefWidth(700);
+        pane.setPrefHeight(500);
 
-        login.montarTela(pane); // Chama o método para montar a tela
+        login.montarTela(pane);
 
         scene = new Scene(pane);
 

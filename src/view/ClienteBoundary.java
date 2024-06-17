@@ -7,7 +7,7 @@ import javafx.scene.control.Button;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.Pane;
 
-public class ClienteConstrutor implements TelaInterface {
+public class ClienteBoundary implements TelaInterface {
 
     //1. montar usando apenas Pane
     //2. usar os estilos do CSS
