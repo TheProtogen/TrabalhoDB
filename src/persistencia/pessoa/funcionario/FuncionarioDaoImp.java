@@ -142,7 +142,7 @@ public class FuncionarioDaoImp implements PessoaDao<Funcionario> {
             String sql = """
                     SELECT *
                     FROM funcionario f, pessoa p
-                    WHERE f.pessoaCPF LIKE ?
+                    WHERE f.pessoaCPF = p.cpf AND f.pessoaCPF = ?
                     """;
             PreparedStatement pstm = con.prepareStatement(sql);
             pstm.setString(1, cpf);
