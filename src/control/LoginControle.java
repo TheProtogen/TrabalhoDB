@@ -8,6 +8,9 @@ import java.sql.SQLException;
 import persistencia.CrudDAO;
 import persistencia.DBconnectionTest;
 
+//Criar construtor que vai receber os dados do TextField pelo LoginBoundary
+//Por esse construtor verificar a existencia do user no database
+
 public class LoginControle implements CrudDAO {
     
     DBconnectionTest con = new DBconnectionTest();
@@ -32,7 +35,7 @@ public class LoginControle implements CrudDAO {
 		    return result;
 
         } catch (SQLException e) {
-            e.printStackTrace();
+            System.out.println("Conexão falhou, usuário não encontrado");
             return false;
         }	
     }
