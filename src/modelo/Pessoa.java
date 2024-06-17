@@ -1,7 +1,7 @@
 package modelo;
 
 public class Pessoa {
-    public int cpf;
+    public String cpf;
     public String senha;
     public String nome;
     public String sobrenome;
@@ -10,25 +10,25 @@ public class Pessoa {
     public String endNum;
     public String endComplemento;
     
-    public Pessoa(int cpf, String senha, String nome, String sobrenome,
-    String endCep, String endLog, String endNum, String endComplemento) {
+//    public Pessoa(String cpf, String senha, String nome, String sobrenome,
+//    String endCep, String endLog, String endNum, String endComplemento) {
+//
+//        this.cpf = cpf;
+//        this.senha = senha;
+//        this.nome = nome;
+//        this.sobrenome = sobrenome;
+//        this.endCep = endCep;
+//        this.endLog = endLog;
+//        this.endNum = endNum;
+//        this.endComplemento = endComplemento;
+//
+//    }
 
-        this.cpf = cpf;
-        this.senha = senha;
-        this.nome = nome;
-        this.sobrenome = sobrenome;
-        this.endCep = endCep;
-        this.endLog = endLog;
-        this.endNum = endNum;
-        this.endComplemento = endComplemento;
-        
-    }
-
-    public int getCpf() {
+    public String getCpf() {
         return cpf;
     }
 
-    public void setCpf(int cpf) {
+    public void setCpf(String cpf) {
         this.cpf = cpf;
     }
 
