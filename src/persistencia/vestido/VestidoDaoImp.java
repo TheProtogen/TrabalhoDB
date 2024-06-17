@@ -102,17 +102,17 @@ public class VestidoDaoImp implements VestidoDao{
     }
 
     @Override
-    public List<Vestido> pesquisarPor(String nome) throws VestidoException {
+    public List<Vestido> pesquisarPor(String marca) throws VestidoException {
         try{
             List<Vestido> lista = new ArrayList<Vestido>();
             Connection con = dbConn.getConnection();
             String sql = """
                         SELECT * 
                         FROM vestido
-                        WHERE nome LIKE ?""";
+                        WHERE marca LIKE ?""";
 
             PreparedStatement pstm = con.prepareStatement(sql);
-            pstm.setString(1,nome);
+            pstm.setString(1,marca);
             ResultSet rs = pstm.executeQuery();
 
             while (rs.next()){
