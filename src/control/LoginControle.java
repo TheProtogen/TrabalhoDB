@@ -5,13 +5,13 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-import persistencia.CrudDAO;
+import persistencia.FuncionarioDao;
 import persistencia.DBconnectionTest;
 
 //Criar construtor que vai receber os dados do TextField pelo LoginBoundary
 //Por esse construtor verificar a existencia do user no database
 
-public class LoginControle implements CrudDAO {
+public class LoginControle implements FuncionarioDao {
     
     DBconnectionTest con = new DBconnectionTest();
 

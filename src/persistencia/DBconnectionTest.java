@@ -4,6 +4,8 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 
 public class DBconnectionTest {
+    private static DBconnectionTest dbConnectionTest = null;
+
     public Connection getConnection() {
         Connection con;
         DBconnectionCredentials db = new DBconnectionCredentials();
@@ -19,5 +21,12 @@ public class DBconnectionTest {
             e.printStackTrace();
             return null;
         }
+    }
+
+    public static DBconnectionTest getInstance() throws Exception {
+        if (dbConnectionTest == null){
+            dbConnectionTest = new DBconnectionTest();
+        }
+        return dbConnectionTest;
     }
 }
