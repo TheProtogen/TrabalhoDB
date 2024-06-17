@@ -62,6 +62,9 @@ public class FuncionarioDAOImp implements FuncionarioDao {
     @Override
     public List<Funcionario> pesquisarTodos(Funcionario f) throws FuncionarioException {
 
+
+
+
         return null;
     }
 
