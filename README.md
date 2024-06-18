@@ -6,6 +6,12 @@ O funcionário tem o maior controle do software, podendo editar, excluir, atuali
 
 O arquivo é executado pelo : `App.java`
 
+## Integrantes
+
+- Lucas Yoshihiro
+- Paulino Mendes
+- Vitor Lopes
+
 ## Diagramas 
 <div>
 <img src="diagramas\Captura de tela 2024-06-16 200841.png" width="400" height="300">
