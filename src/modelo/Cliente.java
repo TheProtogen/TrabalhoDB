@@ -2,15 +2,14 @@ package modelo;
 
 public class Cliente extends Pessoa {
 
+
     public String email;
 
-    public Cliente(String cpf, String senha, String nome, String sobrenome, String endCep, String endLog, String endNum,
-            String endComplemento, String email) {
-        super(cpf, senha, nome, sobrenome, endCep, endLog, endNum, endComplemento);
-        this.email = email;
+    public String getEmail() {
+        return email;
     }
 
-    
-
-
+    public void setEmail(String email) {
+        this.email = email;
+    }
 }
