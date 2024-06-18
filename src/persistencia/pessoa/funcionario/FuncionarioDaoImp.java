@@ -148,18 +148,19 @@ public class FuncionarioDaoImp implements PessoaDao<Funcionario> {
             pstm.setString(1, "%"+cpf+"%");
             ResultSet rs = pstm.executeQuery();
             while(rs.next()){
+                Funcionario f = new Funcionario();
                 
-                String cpf_novo = rs.getString("pessoaCPF");
-                double salario = rs.getDouble("salario");
-                String senha = rs.getString("senha");
-                String nome = rs.getString("nome");
-                String sobrenome = rs.getString("sobrenome");
-                String endCep = rs.getString("end_cep");
-                String endLog = rs.getString("end_logradouro");
-                String endNum = rs.getString("end_numero");
-                String endComp = rs.getString("end_complemento");
+                f.setCpf(rs.getString("pessoaCPF"));
+                f.setSalario(rs.getDouble("salario"));
+                f.setSenha(rs.getString("senha"));
+                f.setNome(rs.getString("nome"));
+                f.setSobrenome(rs.getString("sobrenome"));
+                f.setEndCep(rs.getString("end_cep"));
+                f.setEndLog(rs.getString("end_logradouro"));
+                f.setEndNum(rs.getString("end_numero"));
+                f.setEndComplemento(rs.getString("end_complemento"));
 
-                Funcionario f = new Funcionario(cpf_novo, senha, nome, sobrenome, endCep, endLog, endNum, endComp, salario);
+                //Funcionario f = new Funcionario(cpf_novo, senha, nome, sobrenome, endCep, endLog, endNum, endComp, salario);
 
                 lista.add(f);
             }

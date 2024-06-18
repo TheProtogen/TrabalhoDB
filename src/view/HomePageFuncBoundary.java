@@ -61,6 +61,8 @@ public class HomePageFuncBoundary implements TelaInterface {
         box.getChildren().addAll(manterVestido,manterAluguel,manterCliente,manterFunc);
 
         manterVestido.setOnAction(e -> manterVestidoAction(pane, cpf));
+        manterCliente.setOnAction(e -> manterClienteAction(pane, cpf));
+        manterFunc.setOnAction(e -> manterFuncAction(pane, cpf));
         hyperLinkDeslogar.setOnAction(e -> deslogar(pane, cpf));
 
         pane.getChildren().addAll(homepageLabel,saudacao,box,hyperLinkDeslogar);
@@ -72,6 +74,10 @@ public class HomePageFuncBoundary implements TelaInterface {
 
     public void manterClienteAction (Pane pane, String cpf) {
         mudarTela.mudarCena(pane, cpf, CenaNome.MANTER_CLIENTE);
+    }
+
+    public void manterFuncAction(Pane pane, String cpf) {
+        mudarTela.mudarCena(pane, cpf, CenaNome.MANTER_FUNC);
     }
 
     public void deslogar (Pane pane, String cpf) {
