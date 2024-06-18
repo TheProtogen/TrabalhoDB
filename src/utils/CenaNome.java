@@ -1,0 +1,16 @@
+package utils;
+
+public enum CenaNome {
+    HOMEPAGE,
+    HOMEPAGE_FUNC, 
+
+    MANTER_ALUGUEL, 
+    MANTER_CLIENTE, 
+    MANTER_FUNC, 
+    MANTER_VESTIDO,
+
+    BUSCAR_VESTIDO, 
+    ALUGAR_VESTIDO, 
+    CONSULTAR_ALUGEL, 
+    REALIZAR_PAG  
+}

@@ -2,28 +2,19 @@ package view;
 
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
-import javafx.scene.layout.HBox;
+
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
-import javafx.scene.shape.Rectangle;
 
 public class HomePageFuncBoundary implements TelaInterface {
     
-    private Label homepageLabel;
-
-    private Label saudacao;
-
-    private Button manterAluguel;
-
-    private Button manterCliente;
-
-    private Button manterFunc;
-
-    private Button manterVestido;
-    
-    private VBox box;
-    
-    private Pane pane1;
+    private Label homepageLabel = new Label();
+    private Label saudacao = new Label();
+    private Button manterAluguel = new Button("Manter Aluguel");
+    private Button manterCliente = new Button("Manter Cliente");
+    private Button manterFunc = new Button("Manter Funcionario");
+    private Button manterVestido = new Button("Manter Vestido");
+    private VBox box = new VBox();
     
     @Override
     public void montarTela(Pane pane) {
@@ -33,7 +24,9 @@ public class HomePageFuncBoundary implements TelaInterface {
 
         saudacao.setLayoutX(38);
         saudacao.setLayoutY(80);
-        homepageLabel.setText("Olá");
+        
+        //select aqui
+        saudacao.setText("Olá ");
 
         manterVestido.setPrefWidth(170);
         manterVestido.setPrefHeight(60);
@@ -51,7 +44,7 @@ public class HomePageFuncBoundary implements TelaInterface {
         box.setLayoutY(228);
         box.getChildren().addAll(manterVestido,manterAluguel,manterCliente,manterFunc);
 
-        pane1.getChildren().addAll(homepageLabel,saudacao,box);
+        pane.getChildren().addAll(homepageLabel,saudacao,box);
     }
     
 }

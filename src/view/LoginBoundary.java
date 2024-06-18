@@ -1,6 +1,7 @@
 package view;
 
 import control.LoginControle;
+import control.MudarTela;
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
 import javafx.geometry.Insets;
@@ -11,15 +12,19 @@ import javafx.scene.control.TextField;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.Pane;
 import javafx.util.Duration;
+import utils.CenaNome;
 
 public class LoginBoundary implements TelaInterface {
 
-    private Pane pLogin;
+    private Pane pane;
     private LoginControle ctr = new LoginControle();
     private Label avisoLabel = new Label();
+    MudarTela mudarTela = new MudarTela();
 
     @Override
     public void montarTela(Pane pane) {
+        this.pane = pane;
+
         Label cpfLabel = new Label("CPF:");
         cpfLabel.setLayoutX(50);
         cpfLabel.setLayoutY(100);
@@ -51,20 +56,17 @@ public class LoginBoundary implements TelaInterface {
         // Adicione todos os componentes ao pane
         pane.getChildren().addAll(cpfLabel, cpfField, senhaLabel, senhaField, loginButton, txtCad, avisoLabel);
         
-        loginButton.setOnAction(e -> logar(cpfField, senhaField));
+        loginButton.setOnAction(e -> logar(cpfField, senhaField, pane));
     }
 
-    private void logar(TextField cpf, PasswordField senha) {
+    private void logar(TextField cpf, PasswordField senha, Pane pane) {
         System.out.println(cpf.getText() + " | " + senha.getText());
 
         if (ctr.login(cpf.getText(), senha.getText())) {
-            /* 
-             * TODO
-             * ir pra pagina principal caso isso funciona [ ], se não, mandar mensagem de erro [X]
-             * verificar se é funcionario e mandar pra outra pagina []
-             */
             System.out.println("Usuário existe, mudando para home page");
-            
+
+            if (ctr.checkFuncionario(cpf.getText())) { mudarTela.mudarCena(pane, CenaNome.HOMEPAGE_FUNC); }
+            else { mudarTela.mudarCena(pane, CenaNome.HOMEPAGE); }
         } else {
             avisoLabel.setText("Usuário não encontrado!");
             avisoLabel.setVisible(true);
