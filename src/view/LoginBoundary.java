@@ -22,7 +22,7 @@ public class LoginBoundary implements TelaInterface {
     MudarTela mudarTela = new MudarTela();
 
     @Override
-    public void montarTela(Pane pane) {
+    public void montarTela(Pane pane, String cpf) {
         this.pane = pane;
 
         Label cpfLabel = new Label("CPF:");
@@ -65,8 +65,8 @@ public class LoginBoundary implements TelaInterface {
         if (ctr.login(cpf.getText(), senha.getText())) {
             System.out.println("Usuário existe, mudando para home page");
 
-            if (ctr.checkFuncionario(cpf.getText())) { mudarTela.mudarCena(pane, CenaNome.HOMEPAGE_FUNC); }
-            else { mudarTela.mudarCena(pane, CenaNome.HOMEPAGE); }
+            if (ctr.checkFuncionario(cpf.getText())) { mudarTela.mudarCena(pane, cpf.getText(), CenaNome.HOMEPAGE_FUNC); }
+            else { mudarTela.mudarCena(pane, cpf.getText(), CenaNome.HOMEPAGE); }
         } else {
             avisoLabel.setText("Usuário não encontrado!");
             avisoLabel.setVisible(true);

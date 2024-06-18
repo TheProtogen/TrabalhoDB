@@ -1,6 +1,7 @@
 package utils;
 
 public enum CenaNome {
+    LOGIN,
     HOMEPAGE,
     HOMEPAGE_FUNC, 
 

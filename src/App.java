@@ -21,7 +21,7 @@ public class App extends Application {
         pane.setPrefWidth(700);
         pane.setPrefHeight(500);
 
-        login.montarTela(pane);
+        login.montarTela(pane, "0");
 
         scene = new Scene(pane);
 

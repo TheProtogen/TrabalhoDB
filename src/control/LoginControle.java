@@ -13,14 +13,14 @@ import persistencia.pessoa.PessoaException;
 //Criar construtor que vai receber os dados do TextField pelo LoginBoundary
 //Por esse construtor verificar a existencia do user no database
 
-public class LoginControle implements PessoaDao {
+public class LoginControle {
     
     DBconnectionTest con = new DBconnectionTest();
 
     public boolean login (String cpf, String senha) {
         Connection c = con.getConnection();
 		String sql = "SELECT * FROM pessoa "+
-        "WHERE cpf = ? AND senha = ?"; //criar select aqui
+        "WHERE cpf = ? AND senha = ?"; 
 		
 		
 		try {
@@ -67,35 +67,5 @@ public class LoginControle implements PessoaDao {
         }
         
     }
-    @Override
-    public void insert(Object t) throws PessoaException {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'insert'");
-    }
-
-    @Override
-    public void update(Object t) throws PessoaException {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'update'");
-    }
-
-    @Override
-    public void delete(String cpf) throws PessoaException {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'delete'");
-    }
-
-    @Override
-    public List pesquisarTodos() throws PessoaException {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'pesquisarTodos'");
-    }
-
-    @Override
-    public List pesquisarPor(String cpf) throws PessoaException {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'pesquisarPor'");
-    }
-
-
+    
 }
