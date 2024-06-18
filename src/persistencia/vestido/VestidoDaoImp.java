@@ -115,7 +115,7 @@ public class VestidoDaoImp implements VestidoDao{
                         WHERE marca LIKE ?""";
 
             PreparedStatement pstm = con.prepareStatement(sql);
-            pstm.setString(1,marca);
+            pstm.setString(1,"%"+marca+"%");
             ResultSet rs = pstm.executeQuery();
 
             while (rs.next()){

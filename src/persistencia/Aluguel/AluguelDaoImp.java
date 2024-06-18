@@ -93,7 +93,7 @@ public class AluguelDaoImp implements AluguelDao {
             String sql = """
                     SELECT * 
                     FROM aluguel
-                    WHERE id = ? 
+                    WHERE id = % ? % 
                     """;
 
             PreparedStatement pstm = con.prepareStatement(sql);
