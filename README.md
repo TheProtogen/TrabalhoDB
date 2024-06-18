@@ -7,3 +7,8 @@ O funcionário tem o maior controle do software, podendo editar, excluir, atuali
 O arquivo é executado pelo : `App.java`
 
 ## Diagramas 
+<div>
+<img src="diagramas\Captura de tela 2024-06-16 200841.png" width="400" height="300">
+<img src="diagramas\Imagem1.jpg" width="400" height="300">
+<img src="diagramas\TrabalhoBDdiagrama.png" width="400" height="300">
+</div>
