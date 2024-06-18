@@ -15,10 +15,10 @@ O arquivo é executado pelo : `App.java`
 ## SQL server especificações
 (Pode ser localizado no DBconnectionCredentials.java)
 
-url = "jdbc:sqlserver://localhost:1433;databaseName=Aluguel_Vestido;trustServerCertificate=true"
-database usada = Aluguel_Vestido
-user = "Vivi"
-senha = "root789ROOT"
+- url = "jdbc:sqlserver://localhost:1433;databaseName=Aluguel_Vestido;trustServerCertificate=true"
+- database usada = Aluguel_Vestido
+- user = "Vivi"
+- senha = "root789ROOT"
 
 ## Diagramas 
 <div>
