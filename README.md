@@ -12,6 +12,13 @@ O arquivo é executado pelo : `App.java`
 - Paulino Mendes
 - Vitor Lopes
 
+## SQL server especificações
+(Pode ser localizado no DBconnectionCredentials.java)
+
+url = "jdbc:sqlserver://localhost:1433;databaseName=Aluguel_Vestido;trustServerCertificate=true";
+user = "Vivi";
+pass = "root789ROOT";
+
 ## Diagramas 
 <div>
 <img src="diagramas\Captura de tela 2024-06-16 200841.png" width="400" height="300">
