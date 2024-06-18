@@ -1,6 +1,7 @@
 package view;
 
 import control.CtrlCadastro;
+import control.MudarTela;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
@@ -9,6 +10,7 @@ import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
 import modelo.Cliente;
 import persistencia.pessoa.PessoaException;
+import utils.CenaNome;
 
 public class CadastroClienteBoundary implements TelaInterface {
 
@@ -37,6 +39,7 @@ public class CadastroClienteBoundary implements TelaInterface {
     private Button btnCadastrar = new Button("Cadastrar");
     private Button btnVoltar = new Button("Voltar");
 
+    private MudarTela mudarTela = new MudarTela();
     private CtrlCadastro ctr = new CtrlCadastro();
     private Cliente c = new Cliente();
 
@@ -125,6 +128,8 @@ public class CadastroClienteBoundary implements TelaInterface {
                 e1.printStackTrace();
             }
         });
+
+        btnVoltar.setOnAction(e -> { mudarTela.mudarCena(pane, cpf, CenaNome.LOGIN); });
 
         pane.getChildren().addAll(titulo,cpfL,nome,sobrenome,email,cep,numero,logradouro,complement);
         pane.getChildren().addAll(cpftxt,nometxt,sobrenometxt,emailtxt,ceptxt,numerotxt,logradourotxt,complementtxt,vbox);
