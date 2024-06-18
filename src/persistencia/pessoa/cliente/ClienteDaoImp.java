@@ -61,7 +61,7 @@ public class ClienteDaoImp implements PessoaDao<Cliente> {
         PreparedStatement pstmCliente = null;
         PreparedStatement pstmPessoa = null;
         try{
-            Cliente c =new Cliente();
+            Cliente c = new Cliente();
 
             String sqlPessoa = """
             UPDATE pessoa SET senha = ?, nome = ?, sobrenome = ?, end_cep = ?, end_logradouro = ?, end_numero = ?, end_complemento = ?

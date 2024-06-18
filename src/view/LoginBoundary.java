@@ -6,11 +6,14 @@ import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
 import javafx.geometry.Insets;
 import javafx.scene.control.Button;
+import javafx.scene.control.Hyperlink;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.Pane;
+import javafx.scene.text.Text;
+import javafx.scene.text.TextFlow;
 import javafx.util.Duration;
 import utils.CenaNome;
 
@@ -41,7 +44,8 @@ public class LoginBoundary implements TelaInterface {
         senhaField.setLayoutX(150);
         senhaField.setLayoutY(150);
 
-        Label txtCad = new Label("Não tem uma conta? Se cadastre.");
+        Hyperlink hyper = new Hyperlink(" Se cadastre");
+        TextFlow txtCad = new TextFlow(new Text("Não tem uma conta?"), hyper);
         txtCad.setLayoutX(50);
         txtCad.setLayoutY(195);
 
@@ -53,10 +57,11 @@ public class LoginBoundary implements TelaInterface {
         avisoLabel.setLayoutX(50);
         avisoLabel.setLayoutY(265);
         
+        loginButton.setOnAction(e -> logar(cpfField, senhaField, pane));
+        hyper.setOnAction(e -> mudarTela.mudarCena(pane, cpf, CenaNome.CADASTRO_CLIENTE));
+
         // Adicione todos os componentes ao pane
         pane.getChildren().addAll(cpfLabel, cpfField, senhaLabel, senhaField, loginButton, txtCad, avisoLabel);
-        
-        loginButton.setOnAction(e -> logar(cpfField, senhaField, pane));
     }
 
     private void logar(TextField cpf, PasswordField senha, Pane pane) {

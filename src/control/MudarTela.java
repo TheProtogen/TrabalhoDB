@@ -2,6 +2,7 @@ package control;
 
 import javafx.scene.layout.Pane;
 import utils.CenaNome;
+import view.CadastroClienteBoundary;
 import view.HomePageBoundary;
 import view.HomePageFuncBoundary;
 import view.LoginBoundary;
@@ -21,6 +22,8 @@ public class MudarTela {
         HomePageFuncBoundary homeFunc;
         ManterVestidoBoundary manterVestido;
         ManterClienteBoundary manterCliente;
+
+        CadastroClienteBoundary cadastroC;
 
 
         switch (nome) {
@@ -43,6 +46,10 @@ public class MudarTela {
             case MANTER_CLIENTE:
                 manterCliente = new ManterClienteBoundary();
                 manterCliente.montarTela(pane, cpf);
+                break;
+            case CADASTRO_CLIENTE:
+                cadastroC = new CadastroClienteBoundary();
+                cadastroC.montarTela(pane, cpf);
                 break;
             default:
                 break;

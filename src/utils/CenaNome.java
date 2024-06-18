@@ -9,6 +9,7 @@ public enum CenaNome {
     MANTER_CLIENTE, 
     MANTER_FUNC, 
     MANTER_VESTIDO,
+    CADASTRO_CLIENTE,
 
     BUSCAR_VESTIDO, 
     ALUGAR_VESTIDO, 

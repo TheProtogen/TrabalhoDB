@@ -70,6 +70,9 @@ public class VestidoDaoImp implements VestidoDao{
 
             pstm.executeUpdate();
             con.close();
+
+            System.out.println("Atualizar DB checked");
+
         } catch (Exception e) {
             throw new VestidoException(e);
         }

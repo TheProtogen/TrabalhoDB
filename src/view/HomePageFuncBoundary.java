@@ -6,6 +6,7 @@ import java.sql.ResultSet;
 
 import control.MudarTela;
 import javafx.scene.control.Button;
+import javafx.scene.control.Hyperlink;
 import javafx.scene.control.Label;
 
 import javafx.scene.layout.Pane;
@@ -22,6 +23,7 @@ public class HomePageFuncBoundary implements TelaInterface {
     private Button manterFunc = new Button("Manter Funcionario");
     private Button manterVestido = new Button("Manter Vestido");
     private VBox box = new VBox();
+    private Hyperlink hyperLinkDeslogar;
     private DBconnectionTest con = new DBconnectionTest();
     private MudarTela mudarTela = new MudarTela();
     
@@ -36,6 +38,11 @@ public class HomePageFuncBoundary implements TelaInterface {
         
         //select aqui
         saudacao.setText("Olá "+sqlGetNome(cpf));
+
+        hyperLinkDeslogar = new Hyperlink("Deslogar");
+
+        hyperLinkDeslogar.setLayoutX(558);
+        hyperLinkDeslogar.setLayoutY(42);
 
         manterVestido.setPrefWidth(170);
         manterVestido.setPrefHeight(60);
@@ -55,7 +62,7 @@ public class HomePageFuncBoundary implements TelaInterface {
 
         manterVestido.setOnAction(e -> manterVestidoAction(pane, cpf));
 
-        pane.getChildren().addAll(homepageLabel,saudacao,box);
+        pane.getChildren().addAll(homepageLabel,saudacao,box,hyperLinkDeslogar);
     }
 
     public void manterVestidoAction (Pane pane, String cpf) {
@@ -64,6 +71,10 @@ public class HomePageFuncBoundary implements TelaInterface {
 
     public void manterClienteAction (Pane pane, String cpf) {
         mudarTela.mudarCena(pane, cpf, CenaNome.MANTER_CLIENTE);
+    }
+
+    public void deslogar (Pane pane, String cpf) {
+        mudarTela.mudarCena(pane, cpf, CenaNome.LOGIN);
     }
 
     //add outros botoes
