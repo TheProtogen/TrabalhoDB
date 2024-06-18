@@ -65,7 +65,30 @@ public class PagamentoDaoImp implements PagamentoDao{
 
     @Override
     public List<Pagamento> pesquisarTodos() throws PagamentoException {
-        return pesquisarPor("");
+        try{
+            List<Pagamento> lista = new ArrayList<Pagamento>();
+            Connection con =dbConn.getConnection();
+            String sql = """
+                    SELECT *
+                    FROM pagamento""";
+            PreparedStatement pstm = con.prepareStatement(sql);
+            ResultSet rs = pstm.executeQuery();
+
+            while(rs.next()){
+                Pagamento p = new Pagamento();
+
+                p.setAluguelId(rs.getInt("aluguelIID"));
+                p.setTotal_pagar((rs.getDouble("total_pagar")));
+                p.setData(rs.getDate("data_pagamento").toLocalDate());
+                p.setStatus(rs.getString("status"));
+
+                lista.add(p);
+            }
+            con.close();
+            return lista;
+        }catch (Exception e){
+            throw new PagamentoException(e);
+        }
     }
 
     @Override
