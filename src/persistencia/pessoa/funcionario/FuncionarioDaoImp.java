@@ -145,7 +145,7 @@ public class FuncionarioDaoImp implements PessoaDao<Funcionario> {
                     WHERE f.pessoaCPF = p.cpf AND f.pessoaCPF = ?
                     """;
             PreparedStatement pstm = con.prepareStatement(sql);
-            pstm.setString(1, cpf);
+            pstm.setString(1, "%"+cpf+"%");
             ResultSet rs = pstm.executeQuery();
             while(rs.next()){
                 
