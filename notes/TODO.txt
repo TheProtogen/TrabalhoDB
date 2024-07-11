@@ -1,0 +1,15 @@
+Sistema como um todo
+- Checar sempre se o usuário existe (por exemplo, sempre que ele fizer uma ação, checar se ele existe)
+- Usar FXML, já que é mais fácil ajustar e criar
+- Aplicar os princípios SOLID
+- Preparar as outras telas também
+
+CenaNome (Nomes usados para as telas)
+- Apagar isso e usar o Dependency Inversion Principle (?)
+
+LoginBoundary (Tela de login)
+- Criar um aviso de "carregando" quando o login for efetuado (thread que executa talvez?)
+
+CadastroClienteBoundary (Tela cadastro de cliente) 
+- Pedir para o user colocar uma senha também
+
